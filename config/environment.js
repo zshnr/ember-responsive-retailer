@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'img-src': "'self' data:"
+    },
     modulePrefix: 'ember-responsive-retailer',
     environment: environment,
     baseURL: '/',

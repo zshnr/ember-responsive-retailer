@@ -1,4 +1,4 @@
-var catalogue = [
+export default [
   {
     "name": "Almond Toe Court Shoes",
     "id": "0",

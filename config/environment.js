@@ -3,7 +3,9 @@
 module.exports = function(environment) {
   var ENV = {
     contentSecurityPolicy: {
-      'img-src': "'self' data:"
+      'img-src': "'self' data:",
+      'font-src': "'self' https://fonts.gstatic.com",
+      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com"
     },
     modulePrefix: 'ember-responsive-retailer',
     environment: environment,

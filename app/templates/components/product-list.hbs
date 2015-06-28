@@ -5,12 +5,12 @@
       <h3>{{product.name}}</h3>
       <p>Color: {{product.description}}</p>
       <p>Category: {{product.category}}</p>
-      <p>Price {{product.price}}</p>
+      <p>Price: £{{product.price}}</p>
       <p>Stock: {{product.quantityInStock}}</p>
       {{#if noStock}}
-        <center><input class='btn btn-primary disabled' type='button' value='Out of Stock'></center>
+        <center><button class='btn btn-primary disabled'>Out of stock</button></center>
       {{else}}
-        <center><input class='btn btn-primary' type='submit' value='Add To Cart'></center>
+        <center><button class='btn btn-primary' {{action 'addToCart' product}}>Add to cart</button></center>
       {{/if}}
     </div>
   </div>

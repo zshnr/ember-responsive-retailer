@@ -1,8 +1,10 @@
 export default function() {
 
-  this.get('/products', function(db){
+  this.get('/products');
+
+  this.get('/cart', function(db) {
     return {
-      products: db.products
+      cart: db.cart
     };
   });
 

@@ -7,7 +7,11 @@
       <p>Category: {{product.category}}</p>
       <p>Price {{product.price}}</p>
       <p>Stock: {{product.quantityInStock}}</p>
-      <center><input class='btn btn-primary' type='submit' value='Add To Cart'></center>
+      {{#if noStock}}
+        <center><input class='btn btn-primary disabled' type='button' value='Out of Stock'></center>
+      {{else}}
+        <center><input class='btn btn-primary' type='submit' value='Add To Cart'></center>
+      {{/if}}
     </div>
   </div>
 </div>

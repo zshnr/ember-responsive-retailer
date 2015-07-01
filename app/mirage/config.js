@@ -2,11 +2,16 @@ export default function() {
 
   this.get('/products');
 
-  this.get('/cart', function(db) {
-    return {
-      cart: db.cart
-    };
-  });
+  // this.get('/cart', function(db) {
+  //   return {
+  //     cart: db.cart
+  //   };
+  // });
+
+  // this.post('/cart', function(db, request) {
+  //   var params = JSON.parse(request.requestBody);
+  //   return db.cart.insert(params);
+  // });
 
   // These comments are here to help you get started. Feel free to delete them.
 

@@ -6,5 +6,12 @@ export default DS.Model.extend({
   category: DS.attr('string'),
   price: DS.attr('number'),
   quantityInStock: DS.attr('number'),
-  imageUrl: DS.attr('string')
+  imageUrl: DS.attr('string'),
+  toCartItem: function() {
+    let CartItem = this.container.lookupFactory('model:cart-item');
+    return CartItem.create({
+      name: this.get('name'),
+      price: this.get('price')
+    });
+  }
 });

@@ -1,9 +1,9 @@
 <div class='container-fluid'>
   <div class='row'>
     {{#each model as |product|}}
-      {{#individual-product product=product}}
+      {{#product-list product=product}}
         {{outlet}}
-      {{/individual-product}}
+      {{/product-list}}
     {{/each}}
   </div>
 </div>

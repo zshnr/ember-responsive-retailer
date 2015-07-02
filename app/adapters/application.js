@@ -1,6 +1,6 @@
-import DS from 'ember-data';
+import LFAdapter from 'ember-localforage-adapter/adapters/localforage';
 
-export default DS.RESTAdapter.extend({
+export default LFAdapter.extend({
   shouldReloadAll: function() {
     return true;
   }

@@ -7,6 +7,7 @@ export default Ember.Route.extend({
   actions: {
     addToCart: function(product) {
       product.decrementProperty('quantityInStock');
+      product.save();
     }
   }
 });

@@ -7,6 +7,9 @@ export default Ember.Component.extend({
   actions: {
     addToCart: function(product) {
       this.sendAction('addToCart', product);
+    },
+    removeFromCart: function(product) {
+      this.sendAction('removeFromCart', product);
     }
   }
 });

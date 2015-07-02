@@ -5,7 +5,7 @@ export default Ember.Route.extend({
       return this.store.findAll('product');
   },
   actions: {
-    addToCart: function(product) {
+      addToCart: function(product) {
       product.decrementProperty('quantityInStock');
       product.save();
     }

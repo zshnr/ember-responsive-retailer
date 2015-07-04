@@ -6,5 +6,11 @@ export default DS.Model.extend({
   category: DS.attr('string'),
   price: DS.attr('number'),
   quantityInStock: DS.attr('number'),
-  imageUrl: DS.attr('string')
+  imageUrl: DS.attr('string'),
+  quantityInCart: DS.attr('number'),
+  isInCart: function() {
+    if(this.get('quantityInCart') > 0) {
+      return true;
+    }
+  }.property('quantityInCart')
 });

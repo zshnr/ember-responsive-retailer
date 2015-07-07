@@ -8,9 +8,14 @@ export default DS.Model.extend({
   quantityInStock: DS.attr('number'),
   imageUrl: DS.attr('string'),
   quantityInCart: DS.attr('number'),
-  isInCart: function() {
+  // isInCart: function() {
+  //   if(this.get('quantityInCart') > 0) {
+  //     return true;
+  //   }
+  // }.property('quantityInCart')
+  isInCart: Ember.computed('quantityInCart', function() {
     if(this.get('quantityInCart') > 0) {
       return true;
     }
-  }.property('quantityInCart')
+  })
 });

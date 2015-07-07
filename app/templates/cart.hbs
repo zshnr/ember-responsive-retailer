@@ -1,6 +1,7 @@
 <h2>Cart</h2>
 
 {{#each model as |product|}}
-    <h1>{{product.name}}</h1>
-    <h3>{{product.quantityInCart}}</h3>
+    <p>{{product.name}}</p>
+    <p>{{product.quantityInCart}}</p>
+    <p>{{product.subTotal}}</p>
 {{/each}}

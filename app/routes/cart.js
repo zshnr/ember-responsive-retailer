@@ -8,5 +8,13 @@ export default Ember.Route.extend({
           return product.get('isInCart');
         });
     });
+  },
+  actions: {
+    removeFromCart: function(product) {
+      console.log('removing from cart');
+      product.decrementProperty('quantityInCart');
+      product.incrementProperty('quantityInStock');
+      product.save();
+    }
   }
 });

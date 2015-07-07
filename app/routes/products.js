@@ -6,16 +6,10 @@ export default Ember.Route.extend({
   },
   actions: {
       addToCart: function(product) {
-      console.log('adding to cart');
-      product.incrementProperty('quantityInCart');
-      product.decrementProperty('quantityInStock');
-      product.save();
-    },
-    removeFromCart: function(product) {
-      console.log('removing from cart');
-      product.decrementProperty('quantityInCart');
-      product.incrementProperty('quantityInStock');
-      product.save();
-    }
+        console.log('adding to cart');
+        product.incrementProperty('quantityInCart');
+        product.decrementProperty('quantityInStock');
+        product.save();
+      }
   }
 });

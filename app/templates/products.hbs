@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='row'>
     {{#each model as |product|}}
-      {{#product-list addToCart='addToCart' removeFromCart='removeFromCart' product=product}}
+      {{#product-list addToCart='addToCart' product=product}}
         {{outlet}}
       {{/product-list}}
     {{/each}}

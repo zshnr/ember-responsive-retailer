@@ -1,7 +1,11 @@
 <h2>Cart</h2>
 
-{{#each model as |product|}}
-    <p>{{product.name}}</p>
-    <p>{{product.quantityInCart}}</p>
-    <p>{{product.subTotal}}</p>
-{{/each}}
+<div class='container'>
+  <div class='row'>
+    {{#each model as |product|}}
+      {{#cart-list removeFromCart='removeFromCart' product=product}}
+        {{outlet}}
+      {{/cart-list}}
+    {{/each}}
+  </div>
+</div>

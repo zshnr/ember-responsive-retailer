@@ -8,8 +8,8 @@ A responsive store front written in JavaScript, HTML & CSS, made with Ember.js
 - [x] As a User I can add a product to my shopping cart
 - [x] As a User I can remove a product from my shopping cart
 - [x] As a User I can view the total price for the products in my shopping cart
-- [ ] As a User I can apply a voucher to my shopping cart
-- [ ] As a User I can view the total price for the products in my shopping cart with discounts applied
+- [x] As a User I can apply a voucher to my shopping cart
+- [x] As a User I can view the total price for the products in my shopping cart with discounts applied
 - [ ] As a User I am alerted when I apply an invalid voucher to my shopping cart
 - [x] As a User I am unable to add out of stock products to the shopping cart
 

@@ -11,9 +11,5 @@ export default DS.Model.extend({
   subTotal: Ember.computed('price', 'quantityInCart', function() {
     return this.get('price') * this.get('quantityInCart');
   }),
-  isInCart: Ember.computed('quantityInCart', function() {
-    if(this.get('quantityInCart') > 0) {
-      return true;
-    }
-  })
+  isInCart: Ember.computed.gt('quantityInCart', 0)
 });

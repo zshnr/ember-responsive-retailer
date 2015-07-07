@@ -7,5 +7,7 @@
       {{/cart-list}}
     {{/each}}
   </div>
-  Cart Total: £{{cartTotal}}
+  <h3>Discount Applied: £{{discountAmount}}</h3>
+  <h2>Total: £{{cartTotal}}</h2>
+  <center><h3>Vouchers:</h3><button class='btn btn-info' {{action 'fivePoundVoucher'}}>£5</button><button class='btn btn-info' {{action 'tenPoundVoucher'}}>£10</button><button class='btn btn-info' {{action 'fifteenPoundVoucher'}}>£15</button></center>
 </div>

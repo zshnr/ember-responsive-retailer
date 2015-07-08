@@ -52,5 +52,5 @@ test('it can compute a subtotal', function(assert) {
 
 test('it can compute if its in a cart or not', function(assert) {
   var product = this.subject({quantityInCart: 0});
-  assert.equal(product.get('isInCart'), false, 'isInCart property is false if the product is not in a cart');
+  assert.equal(product.get('isInCart'), false, 'isInCart property is false if the product has zero quantity in cart');
 });

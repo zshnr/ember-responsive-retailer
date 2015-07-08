@@ -9,7 +9,6 @@ export default Ember.Controller.extend({
   }),
   discountAmount: 0,
   discountApplied: false,
-  flashError: null,
   actions: {
     fivePoundVoucher: function() {
       if ((this.get('cartTotal') <= 50) && (this.get('discountApplied') === false)) {

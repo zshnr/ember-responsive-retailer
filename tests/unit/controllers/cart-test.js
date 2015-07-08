@@ -13,10 +13,6 @@ moduleFor('controller:cart', {
   }
 });
 
-test('it exists', function(assert) {
-  assert.ok(this.controller);
-});
-
 test('cartTotal', function(assert) {
   this.controller.set('model', model);
 

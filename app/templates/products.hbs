@@ -1,7 +1,8 @@
-<div class='container-fluid'>
+<div class='container'>
+  <center><h2>Catalogue</h2></center>
   <div class='row'>
     {{#each model as |product|}}
-      {{#product-list addToCart='addToCart' product=product }}
+      {{#product-list addToCart='addToCart' product=product}}
         {{outlet}}
       {{/product-list}}
     {{/each}}

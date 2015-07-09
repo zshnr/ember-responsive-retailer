@@ -1,4 +1,19 @@
-{{outlet}}
-{{cart-counter}}
-{{cart-item}}
-{{cart-items}}
+<div class="container">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <center><h2 class="panel-title">Shopping Cart</h2></center>
+    </div>
+    <table class="table">
+      {{#each model as |product|}}
+        {{#cart-list removeFromCart='removeFromCart' product=product}}
+          <td>{{outlet}}</td>
+        {{/cart-list}}
+      {{/each}}
+    </table>
+    <div class="panel-footer">
+      <h6>Discount Applied: £{{discountAmount}}</h6>
+      <h6>Total: £{{cartTotal}}</h6>
+      <center><h6>Vouchers:</h6><button class='btn btn-info' {{action 'fivePoundVoucher'}}>£5</button><button class='btn btn-info' {{action 'tenPoundVoucher'}}>£10</button><button class='btn btn-info' {{action 'fifteenPoundVoucher'}}>£15</button></center>
+    </div>
+  </div>
+</div>

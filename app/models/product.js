@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
@@ -7,11 +8,9 @@ export default DS.Model.extend({
   price: DS.attr('number'),
   quantityInStock: DS.attr('number'),
   imageUrl: DS.attr('string'),
-  toCartItem: function() {
-    let CartItem = this.container.lookupFactory('model:cart-item');
-    return CartItem.create({
-      name: this.get('name'),
-      price: this.get('price')
-    });
-  }
+  quantityInCart: DS.attr('number'),
+  subTotal: Ember.computed('price', 'quantityInCart', function() {
+    return this.get('price') * this.get('quantityInCart');
+  }),
+  isInCart: Ember.computed.gt('quantityInCart', 0)
 });

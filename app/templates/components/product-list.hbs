@@ -7,7 +7,7 @@
       <p>Category: {{product.category}}</p>
       <p>Price: £{{product.price}}</p>
       <p>Stock: {{product.quantityInStock}}</p>
-      {{#if noStock}}
+      {{#if product.noStock}}
         <center><input class='btn btn-primary disabled' type='button' value='Out of Stock'></center>
       {{else}}
         <center><button class='btn btn-primary' {{action 'addToCart' product}}>Add to cart</button></center>

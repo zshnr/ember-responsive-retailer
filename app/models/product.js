@@ -9,6 +9,9 @@ export default DS.Model.extend({
   quantityInStock: DS.attr('number'),
   imageUrl: DS.attr('string'),
   quantityInCart: DS.attr('number'),
+  noStock: Ember.computed('quantityInStock', function() {
+    return this.get('quantityInStock') === 0;
+  }),
   subTotal: Ember.computed('price', 'quantityInCart', function() {
     return this.get('price') * this.get('quantityInCart');
   }),

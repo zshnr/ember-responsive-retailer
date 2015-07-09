@@ -66,9 +66,9 @@ You will need the following things properly installed on your computer.
 
 ## Thoughts
 
-1. I chose Ember.js to do this tech test in because it had piqued by curiosity. However, most of my woes have been due not only the very steep learning curve of Ember but also its fast changing nature which results in deprecations. To their credit, the core team of Ember is very, very good with documentation and with helping devs migrate from deprecated methods.
-2. I initially used `ember-cli-mirage` to mock an API and used a RESTadapter to make the api calls. However, the addon did not allow fixture data to be updated as a normal app would, so I had to fall back on using `localstorage` (through the `localforage` adapter)
-3. Learning Ember meant that I had to write the code first and figure out its testing later. Now that i've used Ember for a solid 2-3 weeks, I'm fairly sure I can do a TDD first approach when building apps in Ember.
+1. I chose Ember.js for this tech test because it had piqued my curiosity. However, most of my woes were due not only to the very steep learning curve of Ember but also to its fast changing nature which results in deprecations. To their credit, the core team of Ember is excellent with documentation and with helping devs migrate from deprecated methods by descriptive deprecation notices.
+2. I initially used `ember-cli-mirage` to mock an API and used a RESTadapter to make the mock api calls. However, the addon did not allow fixture data to be updated as a normal app would, so I had to fall back on using `localstorage` (through the `localforage` adapter)
+3. Learning Ember meant that I had to write the code first and figure out its testing later. Now that i've used Ember for a solid 2-3 weeks, I can do a TDD first approach when building apps in Ember.
 4. I think most of my pain points was due to using the latest (stable) version of Ember from the get go. When I finally reached a point where `ember-data` and the `localforage` adapter were not persisting data, I had to rollback to a slightly older version. Had I done this earlier I would not have had a WIP list.
 5. Designing a website is a lot difficult than it appears. My respect to designers!
 

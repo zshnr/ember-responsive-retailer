@@ -1,4 +1,7 @@
-<p>{{product.name}}</p>
-<p>{{product.quantityInCart}}</p>
-<p>{{product.subTotal}}</p>
-<button class='btn btn-primary' {{action 'removeFromCart' product}}>Remove from Cart</button>
+<tr>
+  <th>Products<center>{{product.name}}</center></th>
+  <th>Quantity<center>{{product.quantityInCart}}</center></th>
+  <th>Price<center>{{product.price}}</center></th>
+  <th>Subtotal<center>{{product.subTotal}}</center></th>
+  <th><center><button class='btn btn-primary btn-xs' {{action 'removeFromCart' product}}>Remove from Cart</button></center></th>
+</tr>

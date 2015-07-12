@@ -8,6 +8,7 @@ sudo: false
 cache:
   directories:
     - node_modules
+    - bower_components
 
 before_install:
   - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
@@ -21,3 +22,7 @@ install:
 
 script:
   - npm test
+
+addons:
+  code_climate:
+    repo_token: 695eb414b9c6c5020f21c14e291af6740eeb55ff6cdbafbc5200f2600d0291a8

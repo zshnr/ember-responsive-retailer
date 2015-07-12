@@ -6,7 +6,8 @@ module.exports = function(environment) {
       'img-src': "'self' data:",
       'frame-src': "self http://localhost:4200/chrome-extension-localstorage-manager-iframe-notification-404.html",
       'font-src': "'self' https://fonts.gstatic.com",
-      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com"
+      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
+      'script-src': "'self' 'unsafe-inline'"
     },
     modulePrefix: 'ember-responsive-retailer',
     environment: environment,

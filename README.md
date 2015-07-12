@@ -1,6 +1,6 @@
 # Code Coverage
 
-[![Code Climate](https://codeclimate.com/github/zshnr/ember-responsive-retailer/badges/gpa.svg)](https://codeclimate.com/github/zshnr/ember-responsive-retailer) [![Test Coverage](https://codeclimate.com/github/zshnr/ember-responsive-retailer/badges/coverage.svg)](https://codeclimate.com/github/zshnr/ember-responsive-retailer/coverage) [![Build Status](https://travis-ci.org/zshnr/ember-responsive-retailer.svg)](https://travis-ci.org/zshnr/ember-responsive-retailer)
+[![Code Climate](https://codeclimate.com/github/zshnr/ember-responsive-retailer/badges/gpa.svg)](https://codeclimate.com/github/zshnr/ember-responsive-retailer) [![Build Status](https://travis-ci.org/zshnr/ember-responsive-retailer.svg)](https://travis-ci.org/zshnr/ember-responsive-retailer)
 
 # Ember-responsive-retailer
 

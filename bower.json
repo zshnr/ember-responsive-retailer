@@ -19,6 +19,7 @@
     "Faker": "~2.1.3",
     "bootswatch": "~3.3.5",
     "localforage": "~1.2.1",
-    "polyfills": "~0.1.6"
+    "polyfills": "~0.1.6",
+    "blanket": "~1.1.5"
   }
 }

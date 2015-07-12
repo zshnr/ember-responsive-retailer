@@ -1,10 +1,16 @@
 import { moduleFor, test } from 'ember-qunit';
 import Ember from 'ember';
 
-var products = [Ember.Object.create({name: 'shoe', subTotal: 10}), Ember.Object.create({name: 'shirt', subTotal: 20})];
+var products = [Ember.Object.create({name: 'shoe', category: 'Footwear', subTotal: 40}), Ember.Object.create({name: 'shirt', subTotal: 40})];
+
+var productsNoFootwear = [Ember.Object.create({name: 'shirt', category: 'Casualwear', subTotal: 40}), Ember.Object.create({name: 'jacket', category: 'Formalwear', subTotal: 40})];
 
 var model = Ember.ArrayProxy.create({
   content: Ember.A(products)
+});
+
+var modelNoFootwear = Ember.ArrayProxy.create({
+  content: Ember.A(productsNoFootwear)
 });
 
 moduleFor('controller:cart', {
@@ -16,7 +22,13 @@ moduleFor('controller:cart', {
 test('cartTotal', function(assert) {
   this.controller.set('model', model);
 
-  assert.equal(this.controller.get('cartTotal'), 30, 'The cart total function returns the total of all the subTotals in our model');
+  assert.equal(this.controller.get('cartTotal'), 80, 'The cart total function returns the total of all the subTotals in our model');
+});
+
+test('footwearInCart property works', function(assert) {
+  this.controller.set('model', model);
+
+  assert.equal(this.controller.get('footwearInCart'), true, 'The footwearInCart function returns true if the category property of product in cart contains the word "Footwear"');
 });
 
 test('initially there is no discount amount that is applied', function(assert) {
@@ -62,7 +74,8 @@ test('For purchases between £51 and £75 a ten pound voucher is applied', funct
 test('For purchase over £75 with footwear in the cart, a fifteen pound voucher is applied', function(assert) {
   assert.expect(4);
 
-  this.controller.set('cartTotal', 80);
+  this.controller.set('model', model);
+
   assert.equal(this.controller.get('cartTotal'), 80, 'The cart total without discount is £80');
 
   this.controller.send('fifteenPoundVoucher');
@@ -72,6 +85,22 @@ test('For purchase over £75 with footwear in the cart, a fifteen pound voucher 
   assert.equal(this.controller.get('discountApplied'), true, 'Discount applied is now true');
 
   assert.equal(this.controller.get('discountAmount'), 15, 'It shows the correct discount amount');
+});
+
+test('Fifteen Pound voucher is not applied when amount is correct but no footwear item is in cart', function(assert) {
+  assert.expect(4);
+
+  this.controller.set('model', modelNoFootwear);
+
+  assert.equal(this.controller.get('cartTotal'), 80, 'The cart total without discount is £80');
+
+  this.controller.send('fifteenPoundVoucher');
+
+  assert.equal(this.controller.get('cartTotal'), 80, 'The cart total is still £80');
+
+  assert.equal(this.controller.get('discountApplied'), false, 'Discount has not been applied');
+
+  assert.equal(this.controller.get('discountAmount'), 0, 'It shows the correct discount amount (0)');
 });
 
 test('Fifteen Pound voucher is not applied on incorrect amount', function(assert) {

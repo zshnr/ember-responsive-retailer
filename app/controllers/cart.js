@@ -7,6 +7,9 @@ export default Ember.Controller.extend({
       return total;
     }, 0);
   }),
+  footwearInCart: Ember.computed('model.@each.category', function() {
+    return this.model.any(product => product.get('category').includes('Footwear'));
+  }),
   discountAmount: 0,
   discountApplied: false,
   actions: {
@@ -29,7 +32,7 @@ export default Ember.Controller.extend({
       }
     },
     fifteenPoundVoucher: function() {
-      if ((this.get('cartTotal') > 75) && (this.get('discountApplied') === false)) {
+      if ((this.get('cartTotal') > 75) && (this.get('discountApplied') === false) && (this.get('footwearInCart') === true)) {
         var discountTotal = this.get('cartTotal') - 15;
         this.set('discountAmount', 15);
         this.set('discountApplied', true);

@@ -76,7 +76,7 @@ You will need the following things properly installed on your computer.
 
 1. Implement flash notices for adding in cart, removing from cart, and when applying invalid voucher
 2. Acceptance tests!!
-2. Make the £15 voucher only apply when footwear is in the cart
-3. Try to refactor the voucher actions in the cart controller
-3. Design and Style the website. Including the shopping cart
-4. Implement custom media queries to make it properly responsive
+3. ~~Make the £15 voucher only apply when footwear is in the cart~~
+4. Try to refactor the voucher actions in the cart controller
+5. Design and Style the website. Including the shopping cart
+6. Implement custom media queries to make it properly responsive
